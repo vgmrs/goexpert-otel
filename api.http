@@ -1,0 +1,65 @@
+## CEP válido
+POST http://localhost:8080/cep
+Content-Type: application/json
+
+{
+  "cep": "01001000"
+}
+
+###
+
+## CEP inválido formato incorreto
+POST http://localhost:8080/cep
+Content-Type: application/json
+
+{
+  "cep": "123"
+}
+
+###
+
+## CEP inválido não numérico
+POST http://localhost:8080/cep
+Content-Type: application/json
+
+{
+  "cep": "abc12345"
+}
+
+###
+
+## CEP não encontrado
+POST http://localhost:8080/cep
+Content-Type: application/json
+
+{
+  "cep": "12345678"
+}
+
+###
+
+## CEP com hífen
+POST http://localhost:8080/cep
+Content-Type: application/json
+
+{
+  "cep": "01001-000"
+}
+
+###
+
+## CEP com espaços
+POST http://localhost:8080/cep
+Content-Type: application/json
+
+{
+  "cep": " 01001000 "
+}
+
+###
+
+## Sem CEP
+POST http://localhost:8080/cep
+Content-Type: application/json
+
+{}
