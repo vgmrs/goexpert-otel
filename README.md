@@ -1,8 +1,32 @@
 # goexpert-otel
-Exercise Observability and OpenTelemetry for postgraduate Go Expert
+Exercise on Observability and OpenTelemetry for Go Expert Postgraduate Course
 
 ## Description
 
-Desenvolver um sistema em Go que receba um CEP, identifica a cidade e retorna o clima atual (temperatura em graus celsius, fahrenheit e kelvin) juntamente com a cidade. Esse sistema deverá implementar OTEL(Open Telemetry) e Zipkin.
+An application that receives a ZIP code (CEP), identifies the city, and returns the current weather (temperature in Celsius, Fahrenheit, and Kelvin) along with the city name. This system implements OpenTelemetry (OTEL) and Zipkin for observability.
 
-Basedo no cenário conhecido "Sistema de temperatura por CEP" denominado Serviço B, será incluso um novo projeto, denominado Serviço A.
+## How to Install
+
+1. Make sure you have Go installed (version 1.20 or higher)
+
+2. Install dependencies:
+   ```bash
+   make install
+   ```
+
+## How to Run
+
+1. Start all services:
+   ```bash
+   make up
+   ```
+
+2. The API will be available at `http://localhost:8080/weather?cep=YOUR_CEP`
+   Replace `YOUR_CEP` with a valid Brazilian ZIP code (only numbers, e.g., 01001000 for São Paulo)
+
+## Architecture
+
+- **Service A**: Receives requests, forwards them to Service B, and returns the response
+- **Service B**: Handles the business logic for ZIP code validation and weather information retrieval
+- **OpenTelemetry**: Instrumentation for generating traces and metrics
+- **Zipkin**: Distributed tracing system for visualizing request flows
