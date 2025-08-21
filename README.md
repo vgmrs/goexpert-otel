@@ -21,8 +21,13 @@ An application that receives a ZIP code (CEP), identifies the city, and returns 
    make up
    ```
 
-2. The API will be available at `http://localhost:8080/weather?cep=YOUR_CEP`
-   Replace `YOUR_CEP` with a valid Brazilian ZIP code (only numbers, e.g., 01001000 for São Paulo)
+2. You can test the API by sending a POST request to `http://localhost:8080/cep` with a JSON body like this:
+   ```json
+   {
+     "cep": "01001000"
+   }
+   ```
+   Replace `01001000` with a valid Brazilian ZIP code (only numbers, e.g., 01001000 for São Paulo)
 
 ## Architecture
 
